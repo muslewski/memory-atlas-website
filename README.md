@@ -44,3 +44,11 @@ npm run build    # → dist/
 ## License
 
 MIT-family marketing site. Brand art © Mateusz Muslewski.
+
+## Community
+
+Product support lives on **[memory-atlas](https://github.com/muslewski/memory-atlas)**:
+
+- [Discussions](https://github.com/muslewski/memory-atlas/discussions) — questions & ideas
+- [Issues](https://github.com/muslewski/memory-atlas/issues) — bugs & features
+- Website-only fixes — open an issue here
