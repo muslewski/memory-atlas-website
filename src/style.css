@@ -131,3 +131,25 @@ body{
 .vid-frame video{
   min-height:0 !important;
 }
+
+/* install terminal — clay / ink */
+:root {
+  --install-bg: #1a1008;
+  --install-bar: #120b06;
+  --install-border: #3a2818;
+  --install-text: #f2e6d0;
+  --install-muted: #a89070;
+  --install-accent: #e8d4b0;
+  --install-cmd: #f2e6d0;
+  --install-prompt: #f0a060;
+  --install-hover: rgba(242, 230, 208, 0.08);
+  --install-radius: 0;
+}
+.sec-band .install-term { margin-left: auto; margin-right: auto; }
+.hero-band .copy-block {
+  border: 2px solid var(--ink);
+  background: rgba(26,16,8,.12);
+  color: var(--ink);
+  --install-prompt: var(--clay-dark);
+  --install-accent: var(--clay-dark);
+}

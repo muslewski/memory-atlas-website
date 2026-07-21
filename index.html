@@ -46,7 +46,7 @@
       <p class="lede reveal">Full-bleed zone wall in motion. Clay still speaks.</p>
       <div class="actions reveal">
         <a class="btn" href="https://github.com/muslewski/memory-atlas" target="_blank" rel="noopener">GitHub →</a>
-        <a class="btn ghost" href="#stamp">Press the seal</a>
+        <button type="button" class="copy-block" data-cmd="npm install -g memory-atlas" onclick="copyCmd(this)" tabindex="0" aria-label="Copy: npm install -g memory-atlas"><span class="copy-icon" aria-hidden="true">⎘</span><span class="c-prompt">$</span> <span class="c-cmd">npm install -g memory-atlas</span></button>
       </div>
       <p class="caption reveal" style="margin-top:1rem">v01 · hero bleed</p>
     </section>
@@ -120,12 +120,105 @@
       <div class="wrap reveal">
         <p class="sec-id">05 · quickstart</p>
         <h2>Raise the vault</h2>
-        <div class="cmds">
-          <div class="cmd"><code id="c1">npm i -D memory-atlas</code><button type="button" data-copy="#c1">copy</button></div>
-          <div class="cmd"><code id="c2">npx atlas init</code><button type="button" data-copy="#c2">copy</button></div>
-          <div class="cmd"><code id="c3">atlas check</code><button type="button" data-copy="#c3">copy</button></div>
-          <div class="cmd"><code id="c4">atlas stamp &lt;slug&gt; &amp;&amp; atlas build</code><button type="button" data-copy="#c4">copy</button></div>
+        <p class="lede" style="color:var(--cream-soft);margin:0 auto 0;max-width:42ch;text-align:center">Four clicks. Copy each line. Stamp only what you reviewed.</p>
+    <div class="install-term reveal">
+      <div class="install-term-bar">
+        <span class="dot dot-r"></span><span class="dot dot-y"></span><span class="dot dot-g"></span>
+        <span class="term-title">setup</span>
+      </div>
+      <div class="install-tabs" role="tablist" aria-label="Install method">
+        <button class="install-tab" id="atlas-tab-npm" role="tab" aria-selected="true" aria-controls="atlas-panel-npm" tabindex="0" type="button">npm</button><button class="install-tab" id="atlas-tab-npx" role="tab" aria-selected="false" aria-controls="atlas-panel-npx" tabindex="-1" type="button">npx</button><button class="install-tab" id="atlas-tab-git" role="tab" aria-selected="false" aria-controls="atlas-panel-git" tabindex="-1" type="button">git</button>
+      </div>
+      <div class="install-term-body">
+        <div class="install-panel" id="atlas-panel-npm" role="tabpanel" aria-labelledby="atlas-tab-npm">
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npm install -g memory-atlas" role="button" tabindex="0" aria-label="Copy command: npm install -g memory-atlas">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npm install -g memory-atlas</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> Install globally — bins: <code>atlas</code> · <code>memory-atlas</code></div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="atlas init" role="button" tabindex="0" aria-label="Copy command: atlas init">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">atlas init</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Scaffold the vault in this repo</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="atlas check" role="button" tabindex="0" aria-label="Copy command: atlas check">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">atlas check</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Verify claims + ledger</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="atlas stamp zone-slug &amp;&amp; atlas build" role="button" tabindex="0" aria-label="Copy command: atlas stamp &amp;lt;slug&amp;gt; &amp;amp;&amp;amp; atlas build">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">atlas stamp &amp;lt;slug&amp;gt; &amp;amp;&amp;amp; atlas build</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#4</span> Stamp reviewed zones, rebuild index</div>
+          </div>
         </div>
+        <div class="install-panel" id="atlas-panel-npx" role="tabpanel" aria-labelledby="atlas-tab-npx" hidden>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx memory-atlas init" role="button" tabindex="0" aria-label="Copy command: npx memory-atlas init">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx memory-atlas init</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> No global install — run from the registry</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx memory-atlas check" role="button" tabindex="0" aria-label="Copy command: npx memory-atlas check">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx memory-atlas check</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Verify without linking</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="npx memory-atlas build" role="button" tabindex="0" aria-label="Copy command: npx memory-atlas build">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">npx memory-atlas build</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Rebuild map/index.md</div>
+          </div>
+        </div>
+        <div class="install-panel" id="atlas-panel-git" role="tabpanel" aria-labelledby="atlas-tab-git" hidden>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="git clone https://github.com/muslewski/memory-atlas.git" role="button" tabindex="0" aria-label="Copy command: git clone https://github.com/muslewski/memory-atlas.git">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">git clone https://github.com/muslewski/memory-atlas.git</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#1</span> Clone the product repo</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="cd memory-atlas &amp;&amp; npm install &amp;&amp; npm link" role="button" tabindex="0" aria-label="Copy command: cd memory-atlas &amp;&amp; npm install &amp;&amp; npm link">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">cd memory-atlas &amp;&amp; npm install &amp;&amp; npm link</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#2</span> Link the CLI from source</div>
+          </div>
+          <div class="install-step">
+            <div class="cmd-row" onclick="copyCmd(this)" data-cmd="atlas init" role="button" tabindex="0" aria-label="Copy command: atlas init">
+              <span class="c-prompt">$</span>
+              <span class="c-cmd">atlas init</span>
+              <span class="copy-icon" aria-hidden="true">⎘</span>
+            </div>
+            <div class="install-hint"><span class="c-cmt">#3</span> Same verbs as the published package</div>
+          </div>
+        </div>
+        <div class="install-foot"><span class="ok">✓</span> Prefer <code>memory-atlas</code> if MongoDB Atlas CLI owns <code>atlas</code> on PATH.</div>
+      </div>
+    </div>
       </div>
     </section>
 
