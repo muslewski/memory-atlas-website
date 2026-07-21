@@ -1,29 +1,46 @@
-# memory-atlas website
+<p align="center">
+  <img src="public/atlas1.webp" alt="memory-atlas — Atlas the Titan holds the zone wall" width="1000" />
+</p>
 
-Public marketing one-pager for **[memory-atlas](https://github.com/muslewski/memory-atlas)**.
+<p align="center">
+  <a href="https://atlas.muslewski.com"><img src="https://img.shields.io/badge/website-atlas.muslewski.com-c45c26?style=for-the-badge" alt="Website"></a>
+  <a href="https://github.com/muslewski/memory-atlas"><img src="https://img.shields.io/badge/product-memory--atlas-1a1008?style=for-the-badge" alt="Product"></a>
+</p>
 
-- **Live:** https://atlas.muslewski.com
-- **Stack:** Vite static site (Round 7 — responsive + fast media)
-- **Product repo:** https://github.com/muslewski/memory-atlas
+# memory-atlas — marketing website
+
+Public one-pager for **[memory-atlas](https://github.com/muslewski/memory-atlas)** — code-verified memory for agent fleets.
+
+**Live → [atlas.muslewski.com](https://atlas.muslewski.com)**
+
+> **Looking for the tool?** CLI, install, and vault docs live in the product repo:  
+> **https://github.com/muslewski/memory-atlas**  
+> This repo only builds the landing page that markets it.
+
+## Brand
+
+Amphora clay · black-figure Titan · **zone wall** hero · stamp ritual *“Press only what you reviewed.”*
+
+| Asset | Role |
+|-------|------|
+| `public/atlas1.webp` | Titan / vault hero still |
+| `public/video/v01.mp4` | Zone wall motion (seamless loop) |
+| `public/video/v02.mp4` | Stamp press motion |
 
 ## Develop
 
 ```bash
 npm install
-npm run dev
+npm run dev      # http://localhost:5173
+npm run build    # → dist/
 ```
 
-## Build
+## Stack
 
-```bash
-npm run build
-npm run preview
-```
-
-## Deploy
-
-Vercel project linked to this repo. Production domain: `atlas.muslewski.com`.
+- Vite static one-pager (Round 7 — responsive + lazy media)
+- Mobile `video/sm/*` variants, crossfade-baked loops
+- Deployed on Vercel → `atlas.muslewski.com`
 
 ## License
 
-MIT (same family as the product tool). Site content and brand art © Mateusz Muslewski / muslewski.
+MIT-family marketing site. Brand art © Mateusz Muslewski.
