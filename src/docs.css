@@ -77,8 +77,6 @@ body.docs-body {
   top: 0;
   z-index: 100;
   background: color-mix(in srgb, var(--docs-bg) 94%, transparent);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--docs-border);
 }
 .docs-top-inner {
@@ -107,7 +105,7 @@ body.docs-body {
   font-size: 24px;
   color: var(--docs-accent);
   letter-spacing: 0.12em;
-  text-shadow: 0 0 10px var(--docs-accent-glow);
+  text-shadow: none;
 }
 .docs-brand-tag {
   font-family: var(--docs-mono), ui-monospace, monospace;
@@ -271,7 +269,7 @@ body.docs-body {
   letter-spacing: 0.04em;
   line-height: 1.15;
   margin: 0 0 16px;
-  text-shadow: 0 0 28px var(--docs-accent-glow);
+  text-shadow: none;
 }
 .docs-prose h2 {
   font-family: var(--docs-body-font), system-ui, sans-serif;
@@ -312,7 +310,7 @@ body.docs-body {
 }
 .docs-prose a:hover {
   border-bottom-color: var(--docs-accent);
-  text-shadow: 0 0 12px var(--docs-accent-soft);
+  text-shadow: none;
 }
 .docs-prose ul,
 .docs-prose ol {
@@ -396,7 +394,7 @@ body.docs-body {
   padding: 16px 18px;
   margin: 1.1rem 0 1.4rem;
   overflow-x: auto;
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(200, 151, 47, 0.05);
+  box-shadow: none;
 }
 .docs-prose pre code,
 .docs-prose .docs-pre code {
@@ -561,7 +559,6 @@ body.docs-body {
 .docs-top {
   background: color-mix(in srgb, var(--docs-top-bg, var(--docs-panel)) 96%, transparent) !important;
   border-bottom: var(--docs-chrome-border, 1px solid var(--docs-border)) !important;
-  backdrop-filter: blur(12px);
 }
 .docs-brand-word {
   font-family: var(--docs-display), system-ui, sans-serif !important;
@@ -569,7 +566,7 @@ body.docs-body {
   font-size: var(--docs-brand-size, 1.35rem) !important;
   letter-spacing: var(--docs-brand-track, 0.08em) !important;
   font-weight: var(--docs-brand-weight, 700) !important;
-  text-shadow: var(--docs-brand-shadow, none) !important;
+  text-shadow: none !important;
 }
 .docs-brand-tag {
   font-family: var(--docs-mono), ui-monospace, monospace !important;
@@ -650,7 +647,7 @@ body.docs-body {
 .docs-prose h1 {
   font-family: var(--docs-display), system-ui, sans-serif !important;
   color: var(--docs-h1, var(--docs-fg)) !important;
-  text-shadow: var(--docs-h1-shadow, none) !important;
+  text-shadow: none !important;
   letter-spacing: var(--docs-h1-track, 0.02em) !important;
   font-weight: var(--docs-h1-weight, 700) !important;
 }
@@ -749,3 +746,94 @@ body.docs-body {
 .docs-doctrine { color: var(--docs-muted-2) !important; }
 .docs-doctrine .gold-glow,
 .docs-doctrine em { color: var(--docs-accent) !important; }
+
+
+/* ── Atlas craft: physical stamp, no neon ── */
+body.docs-body {
+  background:
+    repeating-linear-gradient(90deg, #1a1008 0 8px, #f2e6d0 8px 10px, #1a1008 10px 18px, #f2e6d0 18px 20px) 0 0 / 100% 10px no-repeat,
+    #f2e6d0 !important;
+  padding-top: 10px;
+}
+.docs-top {
+  background: #c45c26 !important;
+  border-bottom: 3px solid #1a1008 !important;
+  box-shadow: none !important;
+}
+.docs-top-inner { padding-top: 14px; padding-bottom: 14px; }
+.docs-brand-word {
+  color: #1a1008 !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+.docs-brand-tag {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(26,16,8,0.7) !important;
+  border-left: 2px solid #1a1008;
+  padding-left: 10px;
+  margin-left: 2px;
+}
+.docs-aside {
+  border-right: 3px solid #1a1008 !important;
+  background: #e8d4b0 !important;
+}
+.docs-aside-label {
+  font-size: 0.68rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #6a4a30 !important;
+  margin-bottom: 1.1rem !important;
+}
+/* Chapter = seal panel, not glowing card */
+.docs-nav-section {
+  background: rgba(26,16,8,0.07) !important;
+  border: 2px solid #1a1008 !important;
+  border-radius: 0 !important;
+  box-shadow: 6px 6px 0 rgba(26,16,8,0.16) !important;
+  padding: 0.85rem 0.7rem !important;
+  margin-top: 1rem !important;
+}
+.docs-nav:not(:has(.docs-nav-section)) {
+  /* flat top-level links get quiet spacing */
+  gap: 2px;
+}
+.docs-nav-link {
+  border-left: none !important;
+  border-radius: 0 !important;
+  padding: 0.45rem 0.5rem !important;
+  font-size: 0.92rem !important;
+}
+.docs-nav-link:hover {
+  background: rgba(26,16,8,0.1) !important;
+  color: #1a1008 !important;
+}
+.docs-nav-link.is-active {
+  background: #1a1008 !important;
+  color: #f2e6d0 !important;
+  border-left: none !important;
+  font-weight: 700 !important;
+}
+.docs-prose h1 {
+  color: #1a1008 !important;
+  text-shadow: none !important;
+  border-bottom: 3px solid #1a1008;
+  padding-bottom: 0.55rem;
+}
+.docs-prose h2 {
+  border-top: 2px solid #1a1008 !important;
+  padding-top: 1rem !important;
+}
+.docs-prose pre, .docs-pre {
+  box-shadow: 8px 8px 0 rgba(26,16,8,0.22) !important;
+  border: 2px solid #1a1008 !important;
+}
+.docs-gh {
+  box-shadow: 3px 3px 0 rgba(26,16,8,0.3) !important;
+  border-radius: 0 !important;
+}
+.docs-ver {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}

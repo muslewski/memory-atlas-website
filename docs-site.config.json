@@ -12,5 +12,7 @@
   "favicon": "/atlas1.webp",
   "ogImage": "/atlas1.webp",
   "footDoctrine": "Press only what you reviewed.",
-  "ghEditPath": "docs/"
+  "ghEditPath": "docs/",
+  "brandTag": "vault",
+  "asideLabel": "Map"
 }
