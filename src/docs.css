@@ -1,25 +1,57 @@
-/* Fleet docs shell — theme via --docs-* on :root (memory-atlas brand) */
+/* memory-atlas docs — clay stamp paper (matches landing) */
 :root {
-  --docs-bg: #1a1008;
-  --docs-fg: #f2e6d0;
-  --docs-body: #e8d4b0;
-  --docs-muted: #a89070;
-  --docs-muted-2: #c4a882;
-  --docs-border: #3a2818;
-  --docs-panel: #120b06;
-  --docs-accent: #c45c26;
-  --docs-accent-2: #e8a060;
-  --docs-accent-dim: #8a3a14;
-  --docs-accent-glow: rgba(196, 92, 38, 0.3);
-  --docs-accent-soft: rgba(196, 92, 38, 0.12);
+  --docs-bg: #f2e6d0;
+  --docs-fg: #1a1008;
+  --docs-body: #3a2818;
+  --docs-muted: #6a4a30;
+  --docs-muted-2: #5a3a22;
+  --docs-border: #1a1008;
+  --docs-panel: #e8d4b0;
+  --docs-aside-bg: #e8d4b0;
+  --docs-top-bg: #c45c26;
+  --docs-accent: #a84a1c;
+  --docs-accent-2: #8a3a14;
+  --docs-accent-dim: #1a1008;
+  --docs-accent-glow: transparent;
+  --docs-accent-soft: rgba(26, 16, 8, 0.08);
   --docs-display: "Cinzel Decorative", Georgia, serif;
   --docs-body-font: "Libre Baskerville", Georgia, serif;
   --docs-mono: "JetBrains Mono", ui-monospace, monospace;
+  --docs-nav-font: "Libre Baskerville", Georgia, serif;
+  --docs-radius: 0;
+  --docs-brand-size: 1.15rem;
+  --docs-brand-track: 0.04em;
+  --docs-h1: #1a1008;
+  --docs-h1-weight: 700;
+  --docs-h2-weight: 700;
+  --docs-prose-size: 16px;
+  --docs-chrome-border: 2px solid #1a1008;
+  --docs-card-bg: rgba(26, 16, 8, 0.06);
+  --docs-card-border: 2px solid #1a1008;
+  --docs-card-shadow: 6px 6px 0 rgba(26, 16, 8, 0.18);
+  --docs-card-pad: 0.85rem 0.75rem;
+  --docs-term-bg: #1a1008;
+  --docs-term-fg: #f2e6d0;
+  --docs-term-border: 2px solid #1a1008;
+  --docs-term-shadow: 8px 8px 0 rgba(26, 16, 8, 0.28);
+  --docs-term-pad: 1rem 1.1rem;
+  --docs-code-bg: rgba(26, 16, 8, 0.1);
+  --docs-code-fg: #8a3a14;
+  --docs-code-border: 1.5px solid #1a1008;
+  --docs-gh-fg: #f2e6d0;
+  --docs-gh-bg: #1a1008;
+  --docs-gh-border: 2px solid #1a1008;
+  --docs-gh-shadow: 4px 4px 0 rgba(26, 16, 8, 0.25);
 }
-
+.docs-top { background: #c45c26 !important; }
+.docs-brand-word { color: #1a1008 !important; }
+.docs-brand-tag { color: rgba(26,16,8,.65) !important; }
+.docs-top-link { color: #1a1008 !important; }
+.docs-top-link:hover { color: #f2e6d0 !important; }
+.docs-ver { color: #1a1008 !important; border-color: #1a1008 !important; background: rgba(242,230,208,.35) !important; }
 /* ════ SAGE docs — brand-matched product documentation ════ */
 
-.docs-body {
+body.docs-body {
   min-height: 100vh;
 }
 
@@ -300,7 +332,7 @@
   padding: 12px 16px;
   border-left: 3px solid var(--docs-accent);
   background: var(--docs-accent-soft);
-  color: #cfc6b6;
+  color: var(--docs-body);
   font-style: italic;
 }
 .docs-prose hr {
@@ -333,13 +365,13 @@
   vertical-align: top;
 }
 .docs-prose th {
-  border-bottom-color: #2a261c;
+  border-bottom-color: var(--docs-border);
 }
 .docs-prose td {
   color: var(--docs-body);
 }
 .docs-prose tr:hover td {
-  background: rgba(200, 151, 47, 0.03);
+  background: var(--docs-accent-soft);
 }
 .docs-prose td code {
   font-size: 12px;
@@ -513,3 +545,207 @@
   color: var(--docs-muted);
   margin-bottom: 0.75rem;
 }
+/* ── Brand shell overrides (appended per site after tokens) ── */
+
+/* Beat landing page body { background/color/font } from style.css */
+body.docs-body {
+  min-height: 100vh;
+  background: var(--docs-bg) !important;
+  color: var(--docs-fg) !important;
+  font-family: var(--docs-body-font), system-ui, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* Top bar */
+.docs-top {
+  background: color-mix(in srgb, var(--docs-top-bg, var(--docs-panel)) 96%, transparent) !important;
+  border-bottom: var(--docs-chrome-border, 1px solid var(--docs-border)) !important;
+  backdrop-filter: blur(12px);
+}
+.docs-brand-word {
+  font-family: var(--docs-display), system-ui, sans-serif !important;
+  color: var(--docs-accent) !important;
+  font-size: var(--docs-brand-size, 1.35rem) !important;
+  letter-spacing: var(--docs-brand-track, 0.08em) !important;
+  font-weight: var(--docs-brand-weight, 700) !important;
+  text-shadow: var(--docs-brand-shadow, none) !important;
+}
+.docs-brand-tag {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-muted) !important;
+}
+.docs-ver {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-accent-2) !important;
+  border: 1px solid var(--docs-accent-dim) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+  background: var(--docs-accent-soft);
+}
+.docs-top-link {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-muted-2) !important;
+}
+.docs-top-link:hover { color: var(--docs-accent) !important; }
+.docs-gh {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-gh-fg, var(--docs-bg)) !important;
+  background: var(--docs-gh-bg, var(--docs-accent)) !important;
+  border: var(--docs-gh-border, 1px solid var(--docs-accent)) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+  box-shadow: var(--docs-gh-shadow, none) !important;
+}
+.docs-menu-btn {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  border: 1px solid var(--docs-border) !important;
+  color: var(--docs-accent) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+}
+
+/* Sidebar — chapter cards (branded, not flat sage list) */
+.docs-aside {
+  background: var(--docs-aside-bg, var(--docs-panel)) !important;
+  border-right: var(--docs-chrome-border, 1px solid var(--docs-border)) !important;
+}
+.docs-aside-label {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-muted) !important;
+}
+.docs-nav-section {
+  margin-top: 1rem;
+  padding: var(--docs-card-pad, 0.75rem 0.65rem);
+  background: var(--docs-card-bg, transparent);
+  border: var(--docs-card-border, none);
+  border-radius: var(--docs-radius, 2px);
+  box-shadow: var(--docs-card-shadow, none);
+}
+.docs-nav-label {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-accent-2) !important;
+  letter-spacing: 0.12em;
+}
+.docs-nav-link {
+  font-family: var(--docs-nav-font, var(--docs-body-font)), system-ui, sans-serif !important;
+  color: var(--docs-muted-2) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+  border-left: 2px solid transparent !important;
+}
+.docs-nav-link:hover {
+  color: var(--docs-fg) !important;
+  background: var(--docs-accent-soft) !important;
+}
+.docs-nav-link.is-active {
+  color: var(--docs-accent) !important;
+  background: var(--docs-accent-soft) !important;
+  border-left-color: var(--docs-accent) !important;
+  font-weight: 600 !important;
+}
+.docs-aside-foot a {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-muted) !important;
+}
+.docs-aside-foot a:hover { color: var(--docs-accent) !important; }
+
+/* Prose */
+.docs-prose h1 {
+  font-family: var(--docs-display), system-ui, sans-serif !important;
+  color: var(--docs-h1, var(--docs-fg)) !important;
+  text-shadow: var(--docs-h1-shadow, none) !important;
+  letter-spacing: var(--docs-h1-track, 0.02em) !important;
+  font-weight: var(--docs-h1-weight, 700) !important;
+}
+.docs-prose h2 {
+  font-family: var(--docs-display), system-ui, sans-serif !important;
+  color: var(--docs-fg) !important;
+  border-top-color: var(--docs-border) !important;
+  font-weight: var(--docs-h2-weight, 600) !important;
+}
+.docs-prose h3 {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-accent) !important;
+}
+.docs-prose p,
+.docs-prose li {
+  font-family: var(--docs-body-font), system-ui, sans-serif !important;
+  color: var(--docs-body) !important;
+  font-size: var(--docs-prose-size, 15.5px) !important;
+  line-height: 1.7 !important;
+}
+.docs-prose a {
+  color: var(--docs-accent) !important;
+  border-bottom-color: var(--docs-accent-soft) !important;
+}
+.docs-prose a:hover {
+  border-bottom-color: var(--docs-accent) !important;
+  text-shadow: none !important;
+}
+.docs-prose blockquote {
+  border-left-color: var(--docs-accent) !important;
+  background: var(--docs-accent-soft) !important;
+  color: var(--docs-body) !important;
+  border-radius: 0 var(--docs-radius, 2px) var(--docs-radius, 2px) 0;
+}
+.docs-prose :not(pre) > code {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  background: var(--docs-code-bg, var(--docs-accent-soft)) !important;
+  color: var(--docs-code-fg, var(--docs-accent)) !important;
+  border: var(--docs-code-border, 1px solid var(--docs-border)) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+  padding: 0.1em 0.35em;
+}
+
+/* Terminal cards — match landing install/cmd surfaces */
+.docs-prose pre,
+.docs-prose .docs-pre,
+.docs-pre {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  background: var(--docs-term-bg) !important;
+  color: var(--docs-term-fg) !important;
+  border: var(--docs-term-border) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+  box-shadow: var(--docs-term-shadow, none) !important;
+  padding: var(--docs-term-pad, 14px 16px) !important;
+  overflow-x: auto;
+  font-size: 12.5px !important;
+  line-height: 1.5 !important;
+}
+.docs-prose pre code,
+.docs-pre code {
+  background: transparent !important;
+  border: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+}
+.docs-copy {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  background: var(--docs-term-bg) !important;
+  color: var(--docs-accent) !important;
+  border: 1px solid var(--docs-border) !important;
+  border-radius: var(--docs-radius, 2px) !important;
+}
+
+/* Tables */
+.docs-prose thead {
+  color: var(--docs-accent-2) !important;
+}
+.docs-prose th,
+.docs-prose td {
+  border-bottom-color: var(--docs-border) !important;
+}
+.docs-prose tr:hover td {
+  background: var(--docs-accent-soft) !important;
+}
+
+.sec-label {
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+  color: var(--docs-muted) !important;
+}
+.docs-page-foot {
+  border-top-color: var(--docs-border) !important;
+  color: var(--docs-muted) !important;
+  font-family: var(--docs-mono), ui-monospace, monospace !important;
+}
+.docs-doctrine { color: var(--docs-muted-2) !important; }
+.docs-doctrine .gold-glow,
+.docs-doctrine em { color: var(--docs-accent) !important; }
