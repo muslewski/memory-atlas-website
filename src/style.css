@@ -28,7 +28,10 @@ h2{font-size:clamp(1.5rem,3vw,2.1rem);margin:0 0 1rem}
 .foot{padding:1.75rem 0;border-top:2px solid var(--ink);font-size:.8rem;color:var(--mute)}
 .nav{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:1rem 0}
 .brand{font-family:var(--display);font-weight:700;text-decoration:none;color:var(--ink);font-size:1.05rem}
+.nav-mid{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.nav-end{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
 .nav a:not(.btn){color:var(--mute);text-decoration:none;font-size:.88rem}
+.nav-mid a:hover{color:var(--ink)}
 .sec{padding:clamp(2.5rem,6vw,4rem) 0}
 .sec-ink{background:var(--ink);color:var(--cream)}
 .sec-ink .sec-id,.sec-ink .mute,.sec-ink p,.sec-ink li{color:var(--cream-soft)}
@@ -153,10 +156,19 @@ body{
   --install-radius: 0;
 }
 .sec-band .install-term { margin-left: auto; margin-right: auto; }
+/* Hero npm chip — clay stamp */
 .hero-band .copy-block {
   border: 2px solid var(--ink);
-  background: rgba(26,16,8,.12);
+  background: rgba(26, 16, 8, 0.12);
   color: var(--ink);
-  --install-prompt: var(--clay-dark);
-  --install-accent: var(--clay-dark);
+  border-radius: 0;
+  font-family: var(--mono);
 }
+.hero-band .copy-block:hover,
+.hero-band .copy-block:focus-visible {
+  border-color: var(--ink);
+  background: rgba(26, 16, 8, 0.2);
+}
+.hero-band .copy-block .c-prompt { color: var(--clay-dark); }
+.hero-band .copy-block .c-cmd { color: var(--ink); }
+.hero-band .copy-block .copy-icon { color: var(--mute); }
